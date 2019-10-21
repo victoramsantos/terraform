@@ -4,6 +4,7 @@ resource "aws_autoscaling_group" "default_ag" {
   min_size = var.min_size
   max_size = var.max_size
   vpc_zone_identifier = var.vpc_zone_identifier
+  target_group_arns = var.target_group_arns
 
   lifecycle {
     create_before_destroy = true
