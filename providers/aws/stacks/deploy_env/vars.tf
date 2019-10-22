@@ -49,7 +49,7 @@ variable "hc_path" {
   default = "/health"
 }
 variable "hc_port" {
-  default = 8081
+  default = 8080
 }
 variable "hc_threshold" {
   default = 6
@@ -65,4 +65,16 @@ variable "hc_interval" {
 }
 variable "hc_status_code" {
   default = "200"
+}
+
+variable "public_subnets" {
+  default = ["subnet-048ad960fb84677ce", "subnet-041cd24e014c5a1e4"]
+}
+
+variable "env_prefix" {
+  default = "blue"
+}
+
+variable "appname" {
+  default = "MyAppName"
 }

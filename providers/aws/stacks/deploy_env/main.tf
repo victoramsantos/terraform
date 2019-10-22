@@ -11,7 +11,7 @@ terraform {
 }
 
 module sg_22_8080 {
-  source = "../../../../modules/aws/security_group"
+  source = "../../../../modules/aws/security_group/default_22_8080"
   vpc_id = var.vpc_id
 }
 
@@ -46,4 +46,17 @@ module target_group {
   hc_threshold = var.hc_threshold
   hc_timeout = var.hc_timeout
   hc_unhealthy_threshold = var.hc_unhealthy_threshold
+}
+
+module generic_sg {
+  source = "../../../../modules/aws/security_group/generic_ingress"
+  vpc_id = var.vpc_id
+}
+
+module alb {
+  source = "../../../../modules/aws/load_balancer/application"
+  name = "${var.env_prefix}-${var.appname}"
+  security_groups = [module.generic_sg.sg_id]
+  subnets = var.public_subnets
+  target_group = module.target_group.tg_arn
 }
