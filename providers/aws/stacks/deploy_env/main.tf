@@ -22,6 +22,10 @@ module launch_configuration {
   key_name = var.key_name
   create_before_destroy = var.create_before_destroy
   security_groups = [module.sg_22_8080.sg_id]
+  container_port = var.container_port
+  default_image = var.default_image
+  ec2_port = var.ec2_port
+  credential = var.credential
 }
 
 module autoscaling_group {

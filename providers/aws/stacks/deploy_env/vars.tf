@@ -11,7 +11,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "victoramsantos"
+  default = "victorplayland"
 }
 
 variable "create_before_destroy" {
@@ -30,15 +30,15 @@ variable "max_size" {
 }
 
 variable "subnets" {
-  default = ["subnet-0f35d3d2c8e518af0", "subnet-0af3e74d62aae3465"]
+  default = ["subnet-022c7c109a4efbd7c", "subnet-0fbfcf71a1bd17a59"]
 }
 
 variable "vpc_id" {
-  default = "vpc-05d6ac6dae8a916dc"
+  default = "vpc-0008f3605d99e41f1"
 }
 
 variable "tg_port" {
-  default = 8080
+  default = 80
 }
 
 variable "tg_protocol" {
@@ -49,7 +49,7 @@ variable "hc_path" {
   default = "/health"
 }
 variable "hc_port" {
-  default = 8080
+  default = 80
 }
 variable "hc_threshold" {
   default = 6
@@ -68,7 +68,7 @@ variable "hc_status_code" {
 }
 
 variable "public_subnets" {
-  default = ["subnet-048ad960fb84677ce", "subnet-041cd24e014c5a1e4"]
+  default = ["subnet-0709b247651159751", "subnet-0a5a7834e7803827a"]
 }
 
 variable "env_prefix" {
@@ -77,4 +77,17 @@ variable "env_prefix" {
 
 variable "appname" {
   default = "MyAppName"
+}
+
+variable "ec2_port" {
+  default = "80"
+}
+variable "default_image" {
+  default = "nginx"
+}
+variable "container_port" {
+  default = "80"
+}
+
+variable "credential" {
 }
